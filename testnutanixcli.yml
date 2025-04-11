@@ -1,8 +1,6 @@
----
-- name: test nutanlix cli
-  hosts: lab_nutanix
+- hosts: nutanix_hosts
+  gather_facts: no
   tasks:
-    - name: "acli net.list"
-      raw: acli net.list
-      register: net_list
-    - debug: var=net_list
+    - nutanix_acli:
+        host: "{{ nutanix_host }}"
+        command: "vm.list"
