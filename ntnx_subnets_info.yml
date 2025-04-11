@@ -1,0 +1,22 @@
+---
+- name: test-get-subnet-info
+  hosts: localhost
+
+  vars:
+    nutanix_host: "{{ XXXXXXX }}"
+    nutanix_username: "{{ XXXXXXX }}"
+    nutanix_password: "XXXXXXX "
+
+  collections:
+    - nutanix.ncp
+  module_defaults:
+    group/nutanix.ncp.ntnx:
+      nutanix_host: "{{ XXXXXXX }}"
+      nutanix_username: "{{ XXXXXXX }}"
+      nutanix_password: "XXXXXXX "
+
+  tasks:
+  - name: Retrieve subnet info
+    ntnx_subnets_info:
+      filter:
+        name: "my-VLAN"
