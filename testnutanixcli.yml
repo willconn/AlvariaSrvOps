@@ -3,6 +3,6 @@
   hosts: lab_nutanix
   tasks:
     - name: "acli net.list"
-      raw: "acli net.list"
+      raw: acli
       register: net_list
-    - debug: var="net_list"
+    - debug: var=net_list
