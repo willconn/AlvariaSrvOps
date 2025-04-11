@@ -1,6 +1,7 @@
-- hosts: nutanix_hosts
+- hosts: nutanix_cvm
   gather_facts: no
   tasks:
-    - nutanix_acli:
-        host: "{{ nutanix_host }}"
-        command: "vm.list"
+    - shell: acli vm.list
+      register: vm_list
+    - debug:
+        msg: "{{ vm_list.stdout }}"
