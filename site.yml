@@ -1,7 +1,8 @@
-- hosts: nutanix_cvm
-  gather_facts: no
+---
+- name: test raw module
+  hosts: test_servers
   tasks:
-    - shell: acli vm.list
-      register: vm_list
-    - debug:
-        msg: "{{ vm_list.stdout }}"
+    - name: run ip addr
+      raw: ip addr
+      register: ip_addr
+    - debug: var="ip_addr"
