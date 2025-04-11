@@ -2,7 +2,7 @@
 - name: test raw module
   hosts: test_servers
   tasks:
-    - name: run ipconfig
-      raw: ipconfig
-      register: ipconfig
-    - debug: var=ipconfig
+    - name: run ifconfig
+      raw: ifconfig
+      register: ifconfig
+    - debug: var=ifconfig
