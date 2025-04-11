@@ -1,4 +1,4 @@
-- hosts: nutanix_cvm
+- hosts: lab_nutanix
   gather_facts: no
   tasks:
     - shell: acli vm.list
