@@ -5,4 +5,4 @@
     - name: run ip addr
       raw: ip addr
       register: ip addr
-    - debug: var=ip addr
+    - debug: var="ip addr"
