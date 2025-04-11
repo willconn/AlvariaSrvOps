@@ -2,7 +2,7 @@
 - name: test nutanlix cli
   hosts: lab_nutanix
   tasks:
-    - name: acli net.list
-      raw: acli net.list
+    - name: "acli net.list"
+      raw: "acli net.list"
       register: net_list
     - debug: var="net_list"
