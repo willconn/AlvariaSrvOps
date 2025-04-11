@@ -4,5 +4,5 @@
   tasks:
     - name: run ip addr
       raw: ip addr
-      register: ip addr
-    - debug: var="ip addr"
+      register: ip_addr
+    - debug: var="ip_addr"
