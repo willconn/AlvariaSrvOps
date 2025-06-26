@@ -1,6 +1,6 @@
 ---
 - name: Clusters_Info playbook
-  hosts: all
+  hosts: localhost
   gather_facts: false
   collections:
     - nutanix.ncp
