@@ -4,8 +4,12 @@
   gather_facts: false
   collections:
     - nutanix.ncp
-
-
+module_defaults:
+    group/nutanix.ncp.ntnx:
+      nutanix_host: "{{ pc_ip }}"
+      nutanix_username: "{{ vault_pc_username }}"
+      nutanix_password: "{{ vault_pc_password }}"
+      validate_certs: false
   tasks:
   - name: test getting all clusters
     ntnx_clusters_info:
